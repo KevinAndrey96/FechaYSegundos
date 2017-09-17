@@ -1,24 +1,14 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+Una persona ha vivido una cantidad x de segundos, escriba un programa en lenguaje java que a partir de una fecha yyyymmdd y la cantidad de segundos pueda calcular la fecha de nacimiento.
  */
 package fechanacimiento;
 
-import java.math.BigInteger;
 import java.util.Calendar;
-import java.util.Date;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Kevin
- */
+
 public class FechaNacimiento {
 
-    /**
-     * @param args the command line arguments
-     */
     private static String Solicita(String m)
 {
     return JOptionPane.showInputDialog(m);
@@ -34,10 +24,6 @@ private static void Muestra(String m)
         int dia=0;
         int mes=0;
         int año=0;
-        
-        int NacimientoDia=0;
-        int NacimientoMes=0;
-        int NacimientoAño=0;
         
         boolean error=false;
         
@@ -73,7 +59,7 @@ private static void Muestra(String m)
             }
         } while (Segundos <= 0 && Segundos >2147483647);
        
-        //Segundos en un día: 86400
+       //Segundos en un día: 86400
        //Segundos en un mes de 28 días: 
        //segundos en un año: 31536000
        
@@ -83,7 +69,6 @@ private static void Muestra(String m)
            DiasDeResta++;
            Segundos-=86400;
        }
-       //Muestra("La persona tiene: "+DiasDeResta+" días de vida");
        
        Calendar calendar = Calendar.getInstance();
        calendar.set(año,mes-1,dia,0,0);
